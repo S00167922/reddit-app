@@ -31,13 +31,15 @@
     <input name="link" #newlink>
   </div>
 
-  
+  <button (click)="addArticle(newtitle, newlink)" class="ui positive right floated button">
+    Submit Link
+  </button>
+
 </form>
-<button (click)="addArticle(newtitle, newlink)"
-        class="ui positive right floated button">
-        Submit Link
-</button>
 
-
-      
-
+<div class="ui grid posts">
+  <app-article
+    *ngFor="let foobar of articles"
+    [article]="foobar">
+  </app-article>
+</div>
